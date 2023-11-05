@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang-"en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale=1.0>
+	<!--<link rel="stylesheet" href="myCss.css"></link>-->
+	<title>Enroll child</title>
+	
+	
+<style>
+body{ background-image:url("bg.jpg");
+background-color:rgb(109,063,091);
+font-size:115%;
+color:silver;
+}
+h1{
+border:8px solid gray;
+}
+.class1 {
+background-color:gray;
+border:none;
+color:white;
+padding:15px 32px;
+text-align: center;
+text-decoration: none;
+display:inline-block:
+font-size:26px;
+margin:4px 2px;
+cursor:pointer;
+}
+.class1:hover{
+background-color:rgb(191, 191, 191);
+color:black;
+}
+.class2{
+background-color: gray;
+}
+
+
+</style>
+	
+</head>
+<body align="center">
+	<div><h1 >Online Babysitters</h1></div>
+	<div><h2 >Enroll Child</h2></div><br>	<br>
+	<table align="center">
+	<tr><form action="http://localhost/Online Babysitters/OBEnrollChild.php" method="post">
+	<td><label for="NAME">Name</label>
+	</td>
+	<td><input type="text" id="NAME" name="name" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="GENDER">Select gender:</label>
+	</td>
+	<td align="left"><select size="1" name="gender" id="GENDER">
+	<option  value="Male" selected>Male</option>
+	<option  value="Female" >Female</option>
+	</select>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="REGION">Region</label>
+	</td>
+	<td><input type="text" id="REGION" name="region" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="CONTACTNO">Contact number</label>
+	</td>
+	<td><input type="tel"  id="CONTACTNO" name="contactNo" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="AGE">age</label>
+	</td>
+	<td><input type="text" id="AGE" name="age" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td></td>
+	<td align="left"><input type="submit"></input></input>
+	</td>
+	</tr></form>
+	</table>
+</body>
+</html>

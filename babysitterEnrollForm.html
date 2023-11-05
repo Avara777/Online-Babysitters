@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang-"en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale=1.0>
+	<title>Babysitter enroll form</title>
+	<style>
+body{ background-image:url("bg.jpg");
+background-color:rgb(109,063,091);
+font-size:115%;
+color:Gray;
+}
+h1{
+border:8px solid gray;
+}
+
+	
+	</style>
+</head>
+<body align="center">
+	<div><h1 >Online Babysitters</h1></div>
+	<div><h2 >Babysitter Enroll Form</h2></div><br><br>
+	
+	<table align="center" border="0">
+	<tr><form action="http://localhost/Online Babysitters/OBBabysitterEnrollForm.php" method="post">
+	<td><label for="NAME">Name</label>
+	</td>
+	<td><input type="text" id="NAME" name="name" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="ADDRESS">Address</label>
+	</td>
+	<td><input type="text" id="ADDRESS" name="address" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="CONTACTNO">Contact number</label>
+	</td>
+	<td><input type="tel"  id="CONTACTNO" name="contactNo" required></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="EMERGENCYCONTACTNO">Emergency contact number</label>
+	</td>
+	<td><input type="tel" id="EMERGENCYCONTACTNO" name="EmergencyContactNo" required></input>
+	</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+	<td>
+	</td>
+	<td  >
+	<select size="1" id="WORKTIME" name="workTime">
+		<option value="Full Time">Full time </option>
+		<option value="Part Time" selected>Part Time </option>
+		<!--<input type="hidden" name="" value="">-->
+	</select>
+	</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+	<td><label for="">Provided Services</label></td>
+	<td align="left">
+	<textarea cols="30" rows="5" name="PS" required></textarea>
+	</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+	<td></td>
+	<td ><input type="submit"></input>
+	</form></td>
+	</tr>
+	</table>
+</body>
+</html>

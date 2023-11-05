@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang-"en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale=1.0>
+	<!--<link rel="stylesheet" href="myCss.css"></link>-->
+	<title>Update Admin Profile</title>
+	
+<style>
+body{ background-image:url("bg.jpg");
+background-color:rgb(109,063,091);
+font-size:115%;
+color:silver;
+}
+h1{
+border:8px solid gray;
+}
+.class1 {
+background-color:gray;
+border:none;
+color:white;
+padding:15px 32px;
+text-align: center;
+text-decoration: none;
+display:inline-block:
+font-size:26px;
+margin:4px 2px;
+cursor:pointer;
+}
+.class1:hover{
+background-color:rgb(191, 191, 191);
+color:black;
+}
+.class2{
+background-color: gray;
+}
+
+
+</style>
+	
+	
+</head>
+<body align="center">
+	<div><h1 >Online Babysitters</h1></div>
+	<div><h2>Update Admin Profile</h2></div><br>
+	
+	<table align="center"> 
+	<tr><form action="http://localhost/Online Babysitters/OBUpdateAdminProfile.php" method="post">
+	<td><label for="MOBILENO">Mobile number</label>
+	</td>
+	<td><input type="tel" id="MOBILENO" name="mobileNo"></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="PASSWORD">Password</label>
+	</td>
+	<td><input type="password" id="PASSWORD" name="password"></input>
+	</td>
+	</tr>
+	<tr>
+	<td><label for="PROPIC">Profile Picture</label>
+	</td>
+	<td><input type="text" id="PROPIC" name="profilePic"></input>
+	</td>
+	</tr>
+	<tr>
+	<td></td>
+	<td align='right'><input type="submit"></input>
+	</td>
+	</tr></form>
+	</table>
+</body>
+</html>

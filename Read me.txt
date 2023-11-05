@@ -1,0 +1,35 @@
+Introduction:
+"Online Babysitters"
+Created by Virtual university student Naeem Nasir. The following web app is an online application which gives a platform to babysitters, daycares and their clients to:
+-find one another
+-lookup daycare/ babysitter's services
+-find contact information
+-give feedback
+-enroll babysitters, daycares, children
+-check related statistics
+
+Created by:
+html, javascript, css, php, mySql, xampp
+
+Functional spec:
+Admin can:
+1- update his profile(admin can change his pswrd)
+2- login/logout
+3-admin should be able to view 
+-total babysitters
+-total new enrollment
+4-admin can manage offered services(add/update/del)
+5-admin can manage babysitter(add/upd/del)
+6-admin can manage the "about us", "contact us" pages
+7-admin can view enrollment details in a particular period
+
+Babsitters can:
+1-register themselves
+ -form should have name, address, contact number, emergency contact no., choosing btw part time/full time
+ 
+User can:
+1-visit website and check detail of babysitters and services
+2-view detail of services which is provided by daycare
+3-enroll their child
+4-view detil of babysitters who work in a daycare
+6-see the contact detail and contact the website admin
