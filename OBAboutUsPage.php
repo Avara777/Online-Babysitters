@@ -62,16 +62,16 @@ background-color: gray;
 							<div><?php
 							$description=$row['Description'];
 							echo $description."<br><br>";
-							echo "AVARA<br>";
+							echo "Naeem Nasir<br>";
 							echo "Making Pakistan proud since 1999<br><br><br><br><br>";
 							?></div>
 							<div><?php
 							$ContactNumber=$row['ContactNumber'];
-							echo "<b>ContactNumber: </b>".$ContactNumber."<br><br>";
+							echo "<b>Contact Number: </b>".$ContactNumber."<br><br>";
 							?></div>
 							<div><?php
 							$InternationalContactNumber=$row['InternationalContactNumber'];
-							echo "<b>InternationalContactNumber: </b>".$InternationalContactNumber."<br><br>";
+							echo "<b>International Contact Number: </b>".$InternationalContactNumber."<br><br>";
 							?></div>
 							<div><?php
 							$email=$row['Email'];
