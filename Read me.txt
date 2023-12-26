@@ -25,7 +25,7 @@ Admin can:
 
 Babsitters can:
 1-register themselves
- -form should have name, address, contact number, emergency contact no., choosing btw part time/full time
+2-modify their profiles
  
 User can:
 1-visit website and check detail of babysitters and services
@@ -33,3 +33,16 @@ User can:
 3-enroll their child
 4-view detil of babysitters who work in a daycare
 6-see the contact detail and contact the website admin
+
+To login as:
+-admin
+id: ad1
+password: 12345
+
+-babysitter
+id: bs4
+password: dummyPassword
+
+-child
+id: ch2
+password: dummyPassword
