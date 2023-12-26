@@ -43,102 +43,83 @@ background-color: gray;
 </head>
 <body  align="center">
    <?php error_reporting (E_ALL ^ E_NOTICE); ?>
-		<?php
-		echo "<br><br>";
-		$serverName = "localhost";	//connection to Db
-		$userName = "root";
-		$dbPswrd = "";
-		$dbName = "Online Babysitters";
-		$conn = new mysqli($serverName,	$userName, $dbPswrd, $dbName) or die("connect failed: %s\n" . $conn->error);	//connection to Db 
+	<?php
+	echo "<br><br>";
+	$serverName = "localhost";	//connection to Db
+	$userName = "root";
+	$dbPswrd = "";
+	$dbName = "Online Babysitters";
+	$conn = new mysqli($serverName,	$userName, $dbPswrd, $dbName) or die("connect failed: %s\n" . $conn->error);	//connection to Db 
+			
+	if(($_POST['ID']))	//storing user id in php variable
+	{
+		$id = $_POST['ID'];
+		$_SESSION['ID'] = $id;
+	}
+	if(($_POST['PASSWORD']))	//storing user password in php variable
+	{
+		$password = $_POST['PASSWORD'];
+		$_SESSION['PASSWORD'] = $password;
+	}
+	global $empid;
+	global $emppass;
+			
+	$query = "(SELECT Id, Password FROM Babysitters WHERE Id='$id') UNION (SELECT Id, Password FROM Children WHERE Id= '$id')";
+	
+	if($id !== 'ad1')
+	{
+		$result = ($conn->query($query));
+		if ($result->num_rows > 0)
+		{ 
+			while($row = ($result->fetch_assoc()))
+			{
 				
-		if(($_POST['ID']))	//storing user id in php variable
-		{
-			$id = $_POST['ID'];
-			$_SESSION['ID'] = $id;
+				$empid =$row['Id'];
+				echo $empid.'<br>';
+				$emppass = $row['Password'];
+				echo $emppass.'<br><br>';
+			}
 		}
-		if(($_POST['PASSWORD']))	//storing user password in php variable
+		global $i;
+		global $p;
+		if(($id === $empid) and ($password === $emppass))
 		{
-			$password = $_POST['PASSWORD'];
-			$_SESSION['PASSWORD'] = $password;
+			?><script>
+			location.href = 'http://localhost/Online Babysitters/BabysitterInterface.html';
+			</script>
+			<?php
 		}
-		global $empid;
-		global $emppass;
-			
-			$query = "(SELECT Id, Password FROM Babysitters WHERE Id='$id') UNION (SELECT Id, Password FROM Children WHERE Id= '$id')";
-			
-			#SELECT 
-			#		Babysitters.Id AS table1_i,
-			#		Babysitters.Password AS table1_j,
-			#		Children.Id AS table2_i,
-			#		Children.Password AS table2_j
-			#	FROM 
-			#		Babysitters
-			#	JOIN 
-			#		Children 
-			#	ON 
-			#		table1_i= table2_i
-			#	AND
-			#		table2_i= table2_j
-			#	WHERE
-			#		Id= '$id'"
-			#(SELECT Id, Password FROM Babysitters WHERE Id='$id') UNION (SELECT Id, Password, FROM Children WHERE Id= $id)";  //Creating Babysitter query for login
-			#$query = "SELECT Id, Password, FROM Babysitters WHERE Id='$id' UNION SELECT Id, Password, FROM Children WHERE Id= '$id'";  //Creating Babysitter query for login
-
-			if($id !== 'XXX')
+		else
+		{
+			echo "<h2>login id or password wrong</h2><br>";
+		}
+	}			
+	if($id == 'ad1')
+	{
+		$query = "SELECT Id, Password FROM Admin WHERE Id='$id'";
+		
+		global $i;
+		global $p;
+		$result = ($conn->query($query));
+		if ($result->num_rows > 0)
+		{ 
+			while($row = ($result->fetch_assoc()))
 			{
-				$result = ($conn->query($query));
-				if ($result->num_rows > 0)
-				{ 
-					while($row = ($result->fetch_assoc()))
-					{
-						
-						$empid =	 str($row['Id']);
-						echo $empid.'<br>';
-						$emppass =  str($row['Password']);
-						echo $emppass.'<br><br>';
-					}
-				}
-				global $i;
-				global $p;
-				if(($id === $empid) and ($password === $emppass))
-				{
-					?><script>
-					location.href = 'http://localhost/Online Babysitters/BabysitterInterface.html';
-					</script>
-					<?php
-				}
-				else
-				{
-					echo "<h2>login id or password wrong</h2><br>";
-				}
-			}			
-			if($id == 'ad1')
-			{
-			$query = "SELECT Id, Password FROM Admin WHERE Id='$id'";
-			
-			global $i;
-			global $p;
-			$result = ($conn->query($query));
-			if ($result->num_rows > 0)
-						{ 
-							while($row = ($result->fetch_assoc()))
-							{
-							 $i=	 $row['Id'];
-							 $p=  $row['Password'];
-							}
-						}
-			if(($i == $id) and ($p === $password))
-			{
-				?><script>
-					location.href = 'http://localhost/Online Babysitters/AdminInterface.html';
-					</script>
-					<?php					
+			 $i=	 $row['Id'];
+			 $p=  $row['Password'];
 			}
-			else
-			{
-				echo "<h2>login id or password not correct for Administrator</h2><br>";
-			}
-			}
-	  ?>
+		}
+		if(($i == $id) and ($p === $password))
+		{
+			?><script>
+				location.href = 'http://localhost/Online Babysitters/AdminInterface.html';
+				</script>
+				<?php					
+		}
+		else
+		{
+			echo "<h2>login id or password not correct for Administrator</h2><br>";
+		}
+	}  ?>
    </body>
 </html>
